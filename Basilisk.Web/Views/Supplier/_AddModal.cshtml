@@ -1,0 +1,100 @@
+﻿<div class="popup-dialog add-dialog">
+    <header>
+        <h1>Add Category</h1>
+        <a href="javascript:;" class="close-button">
+            <i class="fa fa-close"></i>
+        </a>
+    </header>
+
+    <form class="form" asp-action="AddModal" method="post">
+        <input type="text" id="id" />
+        <div class="field-row">
+            <label>Company Name</label>
+            <input type="text" placeholder="Company Name" id="CompanyName" />
+        </div>
+        <div class="field-row">
+            <label>Contact Person</label>
+            <input type="text" placeholder="Contact Person" id="ContactPerson" />
+        </div>
+        <div class="field-row">
+            <label>Job Title</label>
+            <input type="text" placeholder="Job Title" id="JobTitle" />
+        </div>
+        <div class="field-row">
+            <label>Address</label>
+            <input type="text" placeholder="Address" id="Address" />
+        </div>
+        <div class="field-row">
+            <label>City</label>
+            <input type="text" placeholder="City" id="City" />
+        </div>
+        <div class="field-row">
+            <label>Phone</label>
+            <input type="text" placeholder="Phone" id="Phone" />
+        </div>
+        <div class="field-row">
+            <label>Email</label>
+            <input type="text" placeholder="Email" id="Email" />
+        </div>
+        <div class="field-row">
+            <button type="submit">Save</button>
+        </div>
+
+    </form>
+</div>
+
+<script>
+    var addModal = document.querySelector("#add-modal");
+    addModal.addEventListener("click", function(event) {
+        event.preventDefault();
+        document.querySelector("#id").value = 0;
+        document.querySelector(".modal-layer").style.display = "flex";
+        document.querySelector(".add-dialog").style.display = "block";
+    });
+
+    $(".add-dialog form").submit(function (event){
+        event.preventDefault();
+        var id = document.querySelector("#id").value;
+        let urlAction = "";
+        if (id == 0) {
+            urlAction = "/Supplier/AddModal";
+        }
+        else {
+            urlAction = "/Supllier/Edit";
+        }
+
+        let object = {
+            "id" : id,
+            "companyName" : document.querySelector("#CompanyName").value,
+            "contactPerson" : document.querySelector("#ContactPerson").value,
+            "jobTitle" : document.querySelector("#JobTitle").value,
+            "address" : document.querySelector("#Address").value,
+            "city" : document.querySelector("#City").value,
+            "phone" : document.querySelector("#Phone").value,
+            "email" : document.querySelector("#Email").value
+        };
+
+        var token = $('[name="__RequestVerificationToken"]').val();
+
+        $.ajax({
+            method: "POST",
+            url: urlAction,
+            data: JSON.stringify(object),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            headers: {
+                "__RequestVerificationToken": token
+            },
+            success: function (result) {
+                console.log(result);
+                if (result.success == true) {
+                    location.reload();
+                }
+            },
+            fail: function () { console.log("Fail") },
+            error: function () { console.log("Internal Server Error") }
+        });
+
+    });
+
+</script>

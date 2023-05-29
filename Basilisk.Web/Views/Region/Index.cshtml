@@ -1,0 +1,59 @@
+﻿@using Basilisk.ViewModel.Region
+
+@model IndexRegionViewModel
+
+@{
+    ViewData["Title"] = "Region Index";
+}
+<h1>Total data di tabel Region By ViewBag: @Model.TotalRegion</h1>
+@*<h1>Total data di tabel Category By Model: @Model</h1>*@
+
+<table>
+    <form method="get" asp-controller="Region" asp-action="Index">
+        <div class="field-row">
+            <div class="search">
+                <label for="searchName">Category Search</label>
+                <input id="searchName" type="text" name="searchCity" value="@Model.SearchCity" />
+                <button type="submit" class="cari"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="field-row">
+            <a class="btn btn-add" asp-action="Add"><i class="fas fa-plus"></i></a>
+        </div>
+    </form>
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>ID</th>
+            <th>City</th>
+            <th>Remark</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GridRegion)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-update" asp-action="Edit" asp-route-idRegion="@item.Id"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-delete" asp-action="Delete" asp-route-idRegion="@item.Id" onclick="return confirm('Apakah mau hapus data ini? : @item.Id');"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-detail" asp-action="Detail" asp-route-idRegion="@item.Id"><i class="fas fa-info"></i></a>
+                </td>
+                <td>@item.Id</td>
+                <td>@item.City</td>
+                <td>@item.Remark</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total Data : @Model.TotalData</td>
+            <td colspan="4">
+                @for (int i = 1; i <= Model.TotalHalaman; i++)
+                {
+                    <a class="btn btn-add" asp-action="Index" asp-route-page="@i"
+                   asp-route-searchCity="@Model.SearchCity">@i</a>
+                }
+            </td>
+        </tr>
+    </tfoot>
+</table>

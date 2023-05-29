@@ -1,0 +1,18 @@
+﻿@using Basilisk.ViewModel.Category
+@model CreateUpdateViewModel
+
+<form method="post" action="Edit">
+    <input type="text" asp-for="Id" hidden/>
+    <div class="field-row">
+        <label>Name</label>
+        <input type="text" id="categoryName" placeholder="Name" asp-for="Name" />
+    </div>
+    <div class="field-row">
+        <label>Description</label>
+        <input type="text" id="description" placeholder="Description" asp-for="Description" />
+    </div>
+    <div class="field-row">
+        <button type="submit">Update</button>
+    </div>
+</form>
+

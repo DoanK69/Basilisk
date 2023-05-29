@@ -1,0 +1,183 @@
+.main-body{
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "header header"
+    "navigation body-content"
+    "footer footer"
+}
+
+.header{
+    grid-area: header;
+    background-color: blue;
+}
+
+/* .menu{
+    grid-area: menu;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: yellow;
+} */
+
+.menu > .home,
+.menu > .about,
+.menu > .galery,
+.menu > .contact{
+    cursor: pointer;
+}
+
+.navigation{
+    grid-area: navigation;
+    background-color: orange;
+}
+
+.body-content{
+    grid-area: body-content;
+    background-color: green;
+}
+
+.footer{
+    grid-area: footer;
+    background-color: red;
+    margin: 0;
+}
+
+.footer > h6{
+    color : black;
+}
+
+table{
+    width:100%;
+	margin-bottom:25px;
+	margin: 10px;
+	/* jarak keluar disebut margin */
+}
+td{
+	border: solid 1px black;
+	padding: 5px;
+	/* jarak kedalam disebut padding */
+}
+th {
+    border: solid 1px white;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 6px;
+}
+.fa-times-circle{
+	color:red;
+}
+.fa-check-circle{
+	color:green;
+}
+
+.btn{
+	height: 30px;
+	padding: 0px 10px;
+	color: white;
+	border-radius: 3px;
+	font-weight: bold;
+	display: inline-block;
+	line-height: 30px;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 3px;
+	cursor: pointer;
+	
+}
+
+.btn-update{
+	background-color: orange;
+	color: white;
+}
+
+
+.btn-delete{
+	background-color: red;
+	color: white;
+}
+
+.btn-detail {
+    background-color: grey;
+    color: white;
+}
+
+
+.btn > i > span{
+	margin-left: 6px;
+}
+
+.navigation{
+    padding: 10px;
+    background-color: cadetblue;
+    height: 150px;
+    display: grid;
+}
+
+.home,
+.about,
+.galery,
+.contact{
+    width: 200px;
+    height: 20px;
+}
+
+.home{
+    background-color: blue;
+    color: black;
+    border: solid black 1px;
+}
+
+.about{
+    background-color: blue;
+    color: black;
+    border: solid black 1px;
+}
+
+.galery{
+    background-color: blue;
+    color: black;
+    border: solid black 1px;
+}
+
+.contact{
+    background-color: blue;
+    color: black;
+    border: solid black 1px;
+}
+
+@media only screen and (max-width:820px){
+    .main-body{
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 50px 40px auto 40px;
+        grid-template-areas: 
+        "header"
+        "navigation"
+        "body-content"
+        "footer"
+    }
+    
+    .navigation{
+        display: flex;
+    }
+
+    .home,
+    .about,
+    .galery,
+    .contact{
+        width: 25%;
+        line-height: 20px;
+        text-align: center;
+    }
+
+    .header > h1{
+        margin: 10px;
+    }
+
+    
+
+}
+

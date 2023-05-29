@@ -1,0 +1,64 @@
+﻿@using Basilisk.ViewModel.Customer
+
+@model DetailOrderCustomerViewModel
+
+@{
+    ViewData["Title"] = "Customer Order Detail";
+}
+<table>
+
+    <h5>Customer Name : <b>@Model.Customer.CompanyName</b></h5>
+    <br />
+    <h5>Contact : <b>@Model.Customer.ContactPerson</b></h5>
+    <h5>Phone : <b>@Model.Customer.Phone</b></h5>
+    <h5>Address : <b>@Model.Customer.Address</b></h5>
+    <h5>City : <b>@Model.Customer.City</b></h5>
+    @if (Model.Order.Count() == 0)
+    {
+        <a class="btn btn-add" asp-action="AddProduct" asp-route-id="@Model.Customer.Id"><i class="fas fa-cart-plus"></i></a>
+    }
+    <h2 style="text-align:center">List Order</b></h2>
+
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Invoice Number</th>
+            <th>Order Date</th>
+            <th>Shipped Date</th>
+            <th>Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var itemOrd in Model.Order)
+        {
+            <tr>
+                <td>
+                    @if (@itemOrd.StringShippedDate == "Belum dikirim")
+                    {
+                        <a class="btn btn-detail" style="opacity:25%;"><i class="fa-solid fa-box"></i></a>
+                    }
+                    else if (@itemOrd.StringDueDate != "Belum diterima")
+                    {
+                        <a class="btn btn-terima" style="opacity:25%;"><i class="fas fa-box-open"></i></a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-detail" asp-action="DueDate" asp-route-id="@Model.Customer.Id" asp-route-invoiceNumber="@itemOrd.InvoiceNumber"><i class="fa-solid fa-box-open"></i></a>
+                        
+                    }
+                    <a class="btn btn-detail" asp-action="DetailInvoice" asp-route-id="@Model.Customer.Id" asp-route-invoiceNumber="@itemOrd.InvoiceNumber"><i class="fa-solid fa-info"></i></a>                        
+                </td>
+                <td>@itemOrd.InvoiceNumber</td>
+                <td>@itemOrd.OrderDate</td>
+                <td>@itemOrd.StringShippedDate</td>
+                <td>@itemOrd.StringDueDate</td>
+            </tr>
+        }
+    </tbody>
+    @*<tfoot>
+        <tr>
+            <td>Jumlah Ongkir</td>
+            <td colspan="7" style="text-align:right;">@Model.TotalUangMasuk.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"))</td>
+        </tr>
+    </tfoot>*@
+</table>

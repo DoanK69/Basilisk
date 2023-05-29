@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "PCMZYGWctLUhPrXmL1UKnhIWY2f2h/Eo7g4C41kqhys=",
+  "Source": "Basilisk.Api",
+  "BasePath": "_content/Basilisk.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

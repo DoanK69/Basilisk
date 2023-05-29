@@ -1,0 +1,25 @@
+﻿@using Basilisk.ViewModel.Region
+@model UpsertRegionViewModel
+@{
+    ViewData["Title"] = ViewBag.Judul;
+}
+<h3><center>@ViewBag.Judul</center></h3>
+<form method="post" action="Save">
+    <input asp-for="Id" hidden/>
+
+    <div class="field-row">
+        <label asp-for="City"></label>
+        <input type="text" placeholder="City" asp-for="City"/>
+    </div>
+        <span style="color:red" asp-validation-for="City"></span>
+
+    <div class="field-row">
+        <label asp-for="Remark"></label>
+        <textarea placeholder="Remark" asp-for="Remark"></textarea>
+    </div>
+
+    <div class="field-row">
+        <button type="submit">Save</button>
+    </div>
+
+</form>

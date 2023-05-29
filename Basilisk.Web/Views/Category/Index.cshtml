@@ -1,0 +1,79 @@
+﻿@using Basilisk.ViewModel.Category
+@model IndexCategoryViewModel
+@{
+    ViewData["Title"] = "Category Index";
+}
+<h1>Total data di tabel Category: @Model.TotalCategory</h1>
+@*<h1>Total data di tabel Category By Model: @Model</h1>*@
+
+@section modalDialog{
+    <div class="modal-layer">
+        <partial name="_AddDialog"></partial>
+        <partial name="_DetailDialog"></partial>
+        <partial name="_DeleteDialog"></partial>
+    </div>
+    <script>
+        $(".close-button").click(function (event) {
+            event.preventDefault();
+            $(".modal-layer").removeAttr("style");
+            $(".popup-dialog").removeAttr("style");
+        });
+    </script>
+}
+
+<table>
+    <form method="get" asp-action="Index">
+        <div class="field-row">
+            <div class="search">
+            <label>Category Search</label>
+            <input id="searchName" type="text" name="searchName" value="@Model.SearchName"/>
+            <button type="submit" class="cari"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="field-row">
+            <a class="btn btn-add" asp-action="Add"><i class="fas fa-plus"></i></a>
+            <a class="btn btn-add-modal" id="btnAddModal"><i class="fas fa-plus">Add Modal</i></a>
+        </div>
+    </form>
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Modal Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Grid)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-update" asp-action="Edit" asp-route-id="@item.ID"><i class="fas fa-edit"></i></a>                    
+                    <a class="btn btn-delete" asp-action="Delete" asp-route-id="@item.ID"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-detail" asp-action="Detail" asp-route-id="@item.ID"><i class="fas fa-info"></i></a>                  
+                </td>
+                <td>@item.ID</td>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>
+                    <a class="btn btn-update-modal btn-warning" asp-action="EditModal" asp-route-id="@item.ID"><i class="fas fa-edit">Update Popup</i></a>
+                    <a class="btn btn-detail-modal" asp-action="DetailPopup" asp-route-id="@item.ID"><i class="fas fa-info"><span>Detail Popup</span></i></a>
+                    <a class="btn btn-delete-modal" asp-action="DeletePopup" asp-route-id="@item.ID" data-categoryname="@item.Name"><i class="fas fa-trash">Delete Popup</i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total Data : @Model.TotalData</td>
+            <td colspan="4">
+                @for(int i = 1; i <= Model.TotalHalaman; i++)
+                {
+                    <a class="btn btn-add" asp-action="Index" asp-route-page="@i"
+                    asp-route-searchName="@Model.SearchName">@i</a>
+                }
+            </td>
+        </tr>
+    </tfoot>
+</table>

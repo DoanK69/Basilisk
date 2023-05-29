@@ -1,0 +1,43 @@
+﻿@using Basilisk.ViewModel.Deliveries
+
+@model DetailDeliveryViewModel
+
+@{
+    ViewData["Title"] = "Invoice Detail";
+}
+<table>
+
+    <h5>Company Name : <b>@Model.Delivery.CompanyName</b></h5>
+    <br />
+    <h5>Phone : <b>@Model.Delivery.Phone</b></h5>
+    <h5>Cost : <b>@Model.Delivery.StringCost</b></h5>   
+    <h2 style="text-align:center">Invoice Number : <b>@Model.Delivery.InvoiceNumber</b></h2>
+
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Order Date</th>
+            <th>Shipped Date</th>
+            <th>Due Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var itemOrd in Model.ListOrder)
+        {
+            <tr>              
+                <td>@itemOrd.ProductName</td>
+                <td>@itemOrd.OrderDate</td>
+                <td>@itemOrd.StringShippedDate</td>
+                <td>@itemOrd.StringDueDate</td>
+            </tr>
+        }
+    </tbody>
+    @*<tfoot>
+    <tr>
+    <td>Jumlah Ongkir</td>
+    <td colspan="7" style="text-align:right;">@Model.TotalUangMasuk.ToString("C", CultureInfo.CreateSpecificCulture("id-ID"))</td>
+    </tr>
+    </tfoot>*@
+</table>
+
+

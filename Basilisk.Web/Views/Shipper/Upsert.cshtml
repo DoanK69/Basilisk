@@ -1,0 +1,26 @@
+﻿@using Basilisk.ViewModel.Deliveries
+@model UpsertDeliveryViewModel
+@{
+    ViewData["Title"] = Model.Judul;
+}
+<h3><center>@Model.Judul</center></h3>
+<form method="post" action="Save">
+    <input asp-for="Id" hidden />
+
+    <div class="field-row">
+        <label>Company Name</label>
+        <input type="text" placeholder="Company Name" asp-for="CompanyName" />
+    </div>
+    <div class="field-row">
+        <label>Phone</label>
+        <input placeholder="Phone" asp-for="Phone" />
+    </div>
+    <div class="field-row">
+        <label>Cost</label>
+        <input placeholder="Cost" asp-for="Cost" />
+    </div>
+    <div class="field-row">
+        <button type="submit">Save</button>
+    </div>
+
+</form>

@@ -1,0 +1,29 @@
+﻿@using Basilisk.ViewModel.Login
+
+@model LoginViewModel
+
+@{
+    Layout = "_AuthenticationLayout";
+}
+
+<form method="post" asp-action="Login" asp-controller="Account" asp-route-returnUrl="@ViewBag.ReturnUrl">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input asp-for="Username" style="width:100%" class="form-control" />
+        <label class="form-label" for="form2Example1">Email address</label>
+        <span style="color:red" asp-validation-for="Username"></span>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input asp-for="Password" type="password" style="width:100%" class="form-control"/>
+        <label class="form-label" for="form2Example2">Password</label>
+        <span style="color:red" asp-validation-for="Password"></span>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
+
+</form>
+
+

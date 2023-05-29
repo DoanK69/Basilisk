@@ -1,0 +1,70 @@
+﻿@using Basilisk.ViewModel.Customer
+
+@model IndexCustomerViewModel
+
+@{
+    ViewData["Title"] = "Customer Index";
+}
+
+<h1>Total data di tabel Customer: @Model.TotalCustomer</h1>
+
+<table>
+    <form method="get" asp-controller="Customer" asp-action="Index">
+        <div class="field-row">
+            <div class="search">
+                <label for="searchName">Search</label>
+                <input id="searchName" type="text" name="searchName" value="@Model.SearchName" />
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="field-row">
+            <a class="btn btn-add" asp-action="Add"><i class="fas fa-plus"></i></a>
+        </div>
+    </form>
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>ID</th>
+            <th>Company Name</th>
+            <th>Contact Person</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Total Product</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Grid)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-detail" asp-action="Cart" asp-route-id="@item.Id"><i class="fa-solid fa-cart-plus"></i></a>
+                    <a class="btn btn-update" asp-action="Edit" asp-route-id="@item.Id"><i class="fas fa-pencil"></i></a>
+                    <a class="btn btn-delete" asp-action="Delete" asp-route-id="@item.Id" onclick="return confirm('Apakah kamu ingin menghapus data ini? : @item.Id');"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-success" asp-action="DetailCustomerOrder" asp-route-id="@item.Id"><i class="fa-solid fa-cart-shopping"></i></a>
+                </td>
+                <td>@item.Id</td>
+                <td>@item.CompanyName</td>
+                <td>@item.ContactPerson</td>
+                <td>@item.Address</td>
+                <td>@item.City</td>
+                <td>@item.Phone</td>
+                <td>@item.Email</td>
+                <td>@item.TotalProduct</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total Data : @Model.TotalData</td>
+            <td colspan="9">
+                @for (int i = 1; i <= Model.TotalHalaman; i++)
+                {
+                    <a class="btn btn-add" asp-action="Index" asp-route-page="@i"
+                   asp-route-searchName="@Model.SearchName">@i</a>
+                }
+            </td>
+        </tr>
+    </tfoot>
+</table>

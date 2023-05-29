@@ -1,0 +1,37 @@
+﻿@using Basilisk.ViewModel.Supplier
+@model CreateUpdateSupplierViewModel
+
+<form action="Add" method="post">
+    <div class="field-row">
+        <label>Company Name</label>
+        <input type="text" placeholder="Company Name" asp-for="CompanyName" />
+    </div>
+    <div class="field-row">
+        <label>Contact Person</label>
+        <input type="text" placeholder="Contact Person" asp-for="ContactPerson" />
+    </div>
+    <div class="field-row">
+        <label>Job Title</label>
+        <input type="text" placeholder="Job Title" asp-for="JobTitle" />
+    </div>
+    <div class="field-row">
+        <label>Address</label>
+        <input type="text" placeholder="Address" asp-for="Address" />
+    </div>
+    <div class="field-row">
+        <label>City</label>
+        <input type="text" placeholder="City" asp-for="City" />
+    </div>
+    <div class="field-row">
+        <label>Phone</label>
+        <input type="text" placeholder="Phone" asp-for="Phone" />
+    </div>
+    <div class="field-row">
+        <label>Email</label>
+        <input type="text" placeholder="Email" asp-for="Email" />
+    </div>
+    <div class="field-row">
+        <button type="submit">Save</button>
+    </div>
+
+</form>

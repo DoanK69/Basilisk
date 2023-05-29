@@ -1,0 +1,17 @@
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\bin\Debug\net6.0\Basilisk.Utility.deps.json
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\bin\Debug\net6.0\Basilisk.Utility.dll
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\bin\Debug\net6.0\Basilisk.Utility.pdb
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\bin\Debug\net6.0\Basilisk.DataAccess.dll
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\bin\Debug\net6.0\Basilisk.ViewModel.dll
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\bin\Debug\net6.0\Basilisk.ViewModel.pdb
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\bin\Debug\net6.0\Basilisk.DataAccess.pdb
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\Basilisk.Utility.csproj.AssemblyReference.cache
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\Basilisk.Utility.GeneratedMSBuildEditorConfig.editorconfig
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\Basilisk.Utility.AssemblyInfoInputs.cache
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\Basilisk.Utility.AssemblyInfo.cs
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\Basilisk.Utility.csproj.CoreCompileInputs.cache
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\Basilisk.Utility.csproj.CopyComplete
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\Basilisk.Utility.dll
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\refint\Basilisk.Utility.dll
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\Basilisk.Utility.pdb
+D:\Framework\Project\Basilisk.Web\Basilisk.Utility\obj\Debug\net6.0\ref\Basilisk.Utility.dll

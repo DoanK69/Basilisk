@@ -1,0 +1,28 @@
+﻿@using Basilisk.ViewModel.Login
+
+@model RegisterViewModel
+
+<form method="post" asp-action="Edit" asp-controller="Account">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input asp-for="Username" style="width:100%" class="form-control" />
+        <label class="form-label" for="form2Example1">Username</label>
+        <span style="color:red" asp-validation-for="Username"></span>
+    </div>
+    <!-- Role input -->
+    <div class="form-outline mb-4">
+        @*<select asp-for="" asp-items="@(new SelectList(Model.DropDownSupplierCustom, "LongValue", "Text"))>
+            <option selected>== Pilih ==</option>
+        </select>*@
+        @*<input asp-for="Role" type="text" style="width:100%" class="form-control"/>*@
+        <select class="form-control" asp-for="Role" asp-items="@(new SelectList(Model.DropDownRole, "StringValue", "Text"))">
+            <option selected> -- Pilih --</option>
+        </select>
+        <label class="form-label" for="form2Example2">Role</label>
+        <span style="color:red" asp-validation-for="Role"></span>
+    </div>
+
+    <!-- Submit button -->
+    <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+
+</form>

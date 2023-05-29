@@ -1,0 +1,32 @@
+﻿@using Basilisk.ViewModel.Login
+
+@model IEnumerable<RegisterViewModel>
+
+@{
+    ViewData["Title"] = "Form Daftar";
+}
+
+<table>
+    <a class="btn btn-detail" asp-action="Daftar" asp-controller="Account"><i class="fa fa-user"></i></a>
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Username</th>
+            <th>Role</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-update" asp-action="Edit" asp-route-username="@item.Username"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-delete" asp-action="Delete" asp-route-username="@item.Username"><i class="fas fa-trash"></i></a>
+                </td>
+                <td>@item.Username</td>
+                <td>@item.Role</td>
+            </tr>
+        }
+    </tbody>
+</table>
+

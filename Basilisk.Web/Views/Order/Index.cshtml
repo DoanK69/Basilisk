@@ -1,0 +1,56 @@
+﻿@using Basilisk.ViewModel.Orders
+
+@model IndexOrderViewModel
+
+
+<table>
+    <form method="get" asp-action="Index">
+        <div class="field-row">
+            <div class="search">
+                <label for="searchName">Search</label>
+                <input id="searchName" type="text" name="searchName" value="@Model.SearchName" placeholder="Customer Search"/>
+                <button type="submit" class="cari"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        @*<div class="field-row">
+            <a class="btn btn-add" asp-action="Add"><i class="fas fa-plus"></i></a>
+        </div>*@
+    </form>
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>Invoice Number</th>
+            <th>Customer Name</th>
+            <th>Order Date</th>
+            <th>Total Pembayaran</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GridOrder)
+        {
+            <tr>
+                <td>
+                    @*<a class="btn btn-update" asp-action="Edit" asp-route-invoiceNumber="@item.InvoiceNumber"><i class="fa-solid fa-edit"></i></a>
+                    <a class="btn btn-delete" asp-action="Delete" asp-route-invoiceNumber="@item.InvoiceNumber"><i class="fa-solid fa-trash"></i></a>*@
+                    <a class="btn btn-detail" asp-action="Detail" asp-route-invoiceNumber="@item.InvoiceNumber"><i class="fa-solid fa-info"></i></a>
+                </td>
+                <td>@item.InvoiceNumber</td>
+                <td>@item.CustomerName</td>
+                <td>@item.OrderDate</td>
+                <td>@item.TotalPembayaran</td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total Data : @Model.TotalData</td>
+            <td colspan="4">
+                @for (int i = 1; i <= Model.TotalHalaman; i++)
+                {
+                    <a class="btn btn-add" asp-action="Index" asp-route-page="@i"
+                   asp-route-searchName="@Model.SearchName">@i</a>
+                }
+            </td>
+        </tr>
+    </tfoot>
+</table>

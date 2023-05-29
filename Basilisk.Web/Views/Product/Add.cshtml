@@ -1,0 +1,70 @@
+﻿@using Basilisk.ViewModel.Product
+
+@model UpdateViewModel
+
+@{
+    ViewData["Title"] = "Tambah Product";
+}
+
+<form method="post" action="Add">
+
+    <div class="field-row">
+        <label>Name</label>
+        <input type="text" placeholder="Name" asp-for="Name" />
+    </div>
+
+    @*Drop Down Bawaan C# menggunakan Microsoft.AspNetCore.Mvc.Rendering;*@
+    @*<div class="field-row">
+        <label>Supplier</label>
+        <select asp-for="SupplierId" asp-items="Model.DropDownSupplier">     
+            <option selected>--Pilih--</option>
+        </select>
+    </div>*@
+    
+    @*<div class="field-row">
+        <label>Category</label>
+        <select asp-for="CategoryId" asp-items="Model.DropDownCategory">
+            <option selected>--Pilih--</option>
+        </select>
+    </div>*@
+
+
+    @*Drop Down Custom*@
+    <div class="field-row">
+        <label>Supplier</label>
+        <select asp-for="SupplierId" asp-items="@(new SelectList(Model.DropDownSupplierCustom, "LongValue", "Text"))">
+            <option selected>--Pilih--</option>
+        </select>
+    </div>
+
+    <div class="field-row">
+        <label>Category</label>
+        <select asp-for="CategoryId" asp-items="@(new SelectList(Model.DropDownCategoryCustom, "LongValue", "Text"))">
+            <option selected>--Pilih--</option>
+        </select>
+    </div>
+    <div class="field-row">
+        <label>Description</label>
+        <textarea placeholder="Description" asp-for="Description"></textarea>
+    </div>
+    <div class="field-row">
+        <label>Price</label>
+        <input type="text" placeholder="Price" asp-for="Price" />
+    </div>
+    <div class="field-row">
+        <label>Stock</label>
+        <input type="text" placeholder="Stock" asp-for="Stock" />
+    </div>
+    <div class="field-row">
+        <label>OnOrder</label>
+        <input type="text" placeholder="OnOrder" asp-for="OnOrder" />
+    </div>
+    <div class="field-row">
+        <label>Discontinue</label>
+        <input type="text" placeholder="Discontinue" asp-for="Discontinue" />
+    </div>
+    <div class="field-row">
+        <button type="submit">Save</button>
+    </div>
+
+</form>

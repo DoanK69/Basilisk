@@ -1,0 +1,218 @@
+#targetForm{
+    margin: 20px;
+    /* background-color: rgb(23, 13, 161); */
+}
+
+.grid-container{
+    background-color: blueviolet;
+}
+
+table {
+    width: 100%;
+    /* margin: 10px; */
+}
+
+td{
+    border: solid black 1px;
+    padding: 5px;
+    text-align: center;
+}
+
+th{
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+thead > tr > th:first-child{
+        width: 200px;
+}
+
+.btn
+{
+    display: inline-block;
+    height: 30px;
+    padding: 0px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 3px;
+    line-height: 30px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    background-color: #709cc0;
+}
+
+.btn-save{
+    background-color: #258841;
+    color: white
+}
+
+.btn-update{
+    background-color: #ffa500;
+    color: white
+}
+
+.btn-add {
+    background-color: #709cc0;
+    color: white
+}
+
+.btn-terima:before {
+    content: "\f48c";
+    font-family: Font Awesome 5 Free;
+    left: -5px;
+    position: absolute;
+    top: 0;
+}
+.btn-success {
+    background-color: green;
+    color: white;
+}
+.btn-delete,
+.btn-cancel{
+    background: linear-gradient(to right, #f81421, #fa1414);
+    color: white
+}
+
+.btn > i > span{
+    margin-left: 6px;
+}
+
+form{
+    width: 500px;
+    padding: 20px;
+}
+
+.field-row{
+    margin: 20px 0;
+    /* background-color: blue; */
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+    /*.field-row label,
+    .field-row input {
+        margin: 20px 0;*/
+        /* background-color: blue; */
+        /*width: 250px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .field-row .cari {
+        margin: 20px 0 20px 0;*/
+        /* background-color: blue; */
+        /*width: 50px;
+        display: flex;
+        justify-content: space-between;
+    }*/
+
+.field-row div{
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"],
+input[type="date"],
+select,
+textarea
+{
+    width: 200px;
+}
+
+
+textarea{
+    resize: none;
+}
+
+.replace-checkbox{
+    width: 20px;
+    height: 20px;
+    border: solid black 1px;
+    display: inline-block;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+[name="hobi"]:checked + .replace-checkbox{
+    background-color: black;
+}
+
+.title-form{
+    display: flex;
+    align-items: center;
+}
+
+.title-form > img{
+    width: 35px;
+    height: 35px;
+    margin-right: 10px; 
+}
+
+.tr{
+    display: none;
+}
+
+.field-row .search{
+    display:flex;
+    flex-direction: row;
+    height: 30px;
+}
+
+.cart-detail {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: auto;
+    background-color: white;
+    margin:20px;
+    border:solid grey 0.5px;
+    border-radius:20px;
+    padding: 10px;
+}
+
+.cart-product{
+    display:flex;
+    flex-direction:row;
+}
+.product-image {
+    display:flex;
+    flex-direction:row;
+    width:80px;
+    height:80px;
+    margin-right:20px;
+}
+
+.form-cart{
+    display:flex;
+    flex-direction:column;
+    width:auto;
+}
+
+.summary {
+    display: flex;
+    flex-direction: column;
+    width:450px;
+    height: 100%;
+    background-color: white;
+    margin: 20px;
+    border: solid grey 0.5px;
+    border-radius: 20px;
+    padding: 10px
+}
+
+#myForm {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+.disabled {
+    pointer-events: none;
+    opacity: 0.6;
+    text-decoration: none;
+    color: #ccc;
+    cursor: not-allowed;
+}

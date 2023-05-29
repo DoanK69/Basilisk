@@ -1,0 +1,58 @@
+﻿@using Basilisk.ViewModel.Salesmen
+
+@model UpsertSalesmenViewModel
+
+@{
+    ViewData["Title"] = "Tambah Salesmen";
+}
+
+<form method="post" action="Add">
+    <div class="field-row">
+        <label>Employee Number</label>
+        <input type="text" placeholder="Employee Number" asp-for="EmployeeNumber" />
+    </div>
+    <div class="field-row">
+        <label>First Name</label>
+        <input type="text" placeholder="First Name" asp-for="FirstName" />
+    </div>
+    <div class="field-row">
+        <label>Last Name</label>
+        <input type="text" placeholder="Last Name" asp-for="LastName" />
+    </div>
+    <div class="field-row">
+        <label>Level</label>
+        <input type="text" placeholder="Level" asp-for="Level" />
+    </div>
+    <div class="field-row">
+        <label>Birth Date</label>
+        <input placeholder="Name" asp-for="BirthDate" />
+    </div>
+    <div class="field-row">
+        <label>Hired Date</label>
+        <input placeholder="Name" asp-for="HiredDate" />
+    </div>
+    <div class="field-row">
+        <label>Address</label>
+        <input type="text" placeholder="Address" asp-for="Address" />
+    </div>
+    <div class="field-row">
+        <label>City</label>
+        <input type="text" placeholder="City" asp-for="City" />
+    </div>
+    <div class="field-row">
+        <label>Phone</label>
+        <input type="text" placeholder="Phone" asp-for="Phone" />
+    </div>
+        <span asp-validation-for="Phone"></span>
+    <div class="field-row">
+        <label>Superior</label>
+        <select asp-for="SuperiorEmployeeNumber" asp-items="@(new SelectList(Model.DropDownSuperiorEmployeeNumber, "StringValue", "Text"))">
+            <option selected value="@null">--Pilih--</option>
+        </select>
+    </div>
+    @*<input asp-for="DropDownSuperiorEmployeeNumber" hidden/>*@
+    <div class="field-row">
+        <button type="submit">Save</button>
+    </div>
+
+</form>

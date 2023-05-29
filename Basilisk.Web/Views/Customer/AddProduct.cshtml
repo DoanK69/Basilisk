@@ -1,0 +1,27 @@
+﻿@using Basilisk.ViewModel.Customer
+
+@model IndexProductCartViewModel
+@{
+    ViewData["Title"] = "Add Product";
+}
+<a class="btn btn-detail" asp-action="Cart" asp-route-id="@Model.CustomerId"><i class="fa-solid fa-arrow-left"></i></a>
+<div class="row">
+@for(int index = 0; index < Model.ProductCart.Count(); index++)
+{
+        <div class="col-sm-2">
+            <div class="card" style="margin-bottom:10px; margin-top:10px">
+                <img src="~/img/bull-removebg-preview.png" class="card-img-top" alt="...">
+                <form action="AddProduct" method="post">
+                    <input name="id" value="@Model.ProductCart[index].CustomerId" hidden>
+                    <input name="idProd" value="@Model.ProductCart[index].ProductId" hidden>
+                <div class="card-body">
+                    <h5 class="card-title" style="font-size:17px">@Model.ProductCart[index].ProductName</h5>
+                    <p class="card-text">@Model.ProductCart[index].Harga</p>
+                    <button asp-action="AddProduct" class="btn btn-update" type="submit"><i class="fas fa-cart-plus"></i></button>
+                </div>
+                </form>
+            </div>
+        </div>
+}
+</div>
+

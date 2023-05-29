@@ -1,0 +1,73 @@
+﻿@using Basilisk.ViewModel.Orders
+@using Basilisk.ViewModel.OrderDetails
+
+@model DetailOrderViewModel
+
+@{
+    ViewData["Title"] = "Order Details";
+}
+<table>
+    <tr>
+        <td style="border:none; display:inline-block;justify-content:flex-start">
+            <h4 style="text-align:left">Info Order</h4>
+            <div class="field-row">
+                <label>Invoice Number : <b>@Model.GridOrder.InvoiceNumber</b></label>
+            </div>
+            <div class="field-row">
+                <label>Customer Name : <b>@Model.GridOrder.CustomerName</b></label>
+            </div>
+            <div class="field-row">
+                <label>Sales Name : <b>@Model.GridOrder.SalesName</b></label>
+            </div>
+            <div class="field-row">
+                <label>Order Date : <b>@Model.GridOrder.OrderDate</b></label>
+            </div>
+        </td>
+        <td style="border:none;">
+            <h4 style="text-align:left">Info Delivery</h4>
+            <div class="field-row">
+                <label>Shipped Date : <b>@Model.GridOrder.StringShippedDate</b></label>
+            </div>
+            <div class="field-row">
+                <label>Due Date : <b>@Model.GridOrder.StringDueDate</b></label>
+            </div>
+            <div class="field-row" style="width:100%">
+                <label>Destination Address : <b>@Model.GridOrder.DesAddress</b></label>
+            </div>
+            <div class="field-row">
+                <label>Destination City : <b>@Model.GridOrder.DesCity</b></label>
+            </div>
+            <div class="field-row">
+                <label>Destination Postal Code : <b>@Model.GridOrder.DesPostalCode</b></label>
+            </div>
+            <div class="field-row">
+                <label>Destination Cost : <b>@Model.GridOrder.DesCost</b></label>
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="width:100%; border:none" colspan="2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nama Produk</th>
+                        <th>Qty</th>
+                        <th>Harga</th>
+                        <th>Diskon</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.GridOrderDetails)
+                    {
+                        <tr>
+                            <td>@item.ProductName</td>
+                            <td>@item.Qty</td>
+                            <td>@item.Harga</td>
+                            <td>@item.Diskon</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </td>
+    </tr>
+</table>

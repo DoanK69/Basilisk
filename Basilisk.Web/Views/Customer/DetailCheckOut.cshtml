@@ -1,0 +1,72 @@
+﻿@using Basilisk.ViewModel.Customer
+@using System.Globalization;
+
+@model DetailCheckOutViewModel
+
+@{
+    ViewData["Title"] = "Detail Check Out";
+}
+
+
+<form method="post" action="CheckOutDetail" id="myForm">
+    <div class="form-cart">
+    @for (int i = 0; i < Model.CartList.Count(); i++)
+    {
+        <div class="cart-detail">
+            <div class="cart-supplier">
+                    <label class="form-check-label" for="inlineCheckbox1">Seller : @Model.CartList[i].CompanyName</label>
+            </div>
+            <hr />
+            <div class="cart-product">
+                <div class="product">
+                    @for (int j = 0; j < Model.CartList[i].Products.Count(); j++)
+                    {
+                        <img src="~/img/bull-removebg-preview.png" width="80px"></img>
+                        <b>@Model.CartList[i].Products[j].ProductName</b>
+
+                            <br />
+                            @Model.CartList[i].Products[j].StringPrice;
+                            <br />
+                            <div class="cart-button">
+                            <label>Quantity</label>  <b>@Model.CartList[i].Products[j].Qty</b>
+                        <input asp-for="@Model.CartList[i].Products[j].ProductName" hidden />
+                        <input asp-for="@Model.CartList[i].Products[j].Price" hidden />
+                        <input asp-for="@Model.CartList[i].Products[j].Qty" hidden />
+                        <input asp-for="@Model.CartList[i].Products[j].ProductId" hidden />
+                        <input asp-for="@Model.CartList[i].Products[j].CartId" hidden />
+                        <input asp-for="@Model.CartList[i].CompanyName" hidden />
+                        <input asp-for="@Model.CustomerId" hidden />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+    <div class="summary" style="display:block">
+        <div class="field-row">
+            <label>Delivery</label>
+            <select id="delivery" asp-for="DeliveryId" asp-items="@(new SelectList(Model.DropDownDelivery, "LongValue", "Text"))">
+                <option selected>--Pilih--</option>                
+            </select>
+        </div>
+        <div class="field-row">
+            <label>Destination Address</label>
+            <input asp-for="DestinationAddress" />
+        </div>
+        <div class="field-row">
+            <label>Destination City</label>
+            <input asp-for="DestinationCity" />
+        </div>
+        <div class="field-row">
+            <label>Destination Postal Code</label>
+            <input asp-for="DestinationPostalCode" />
+        </div>
+        <div class="field-row">
+            <label>Total Harga</label>
+            <input value="@Model.StringTotalHarga" disabled />
+            <input asp-for="@Model.TotalHarga" hidden />
+        </div>
+        <button asp-action="CheckOutDetail" class="btn btn-primary">Checkout</button>
+    </div>
+</form>

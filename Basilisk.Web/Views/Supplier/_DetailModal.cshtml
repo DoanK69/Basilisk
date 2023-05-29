@@ -1,0 +1,78 @@
+﻿<div class="popup-dialog detail-dialog">
+    <header>
+        <h1>Detail Supplier</h1>
+        <a class="close-button" href="javascript:;">
+            <i class="fa fa-close"></i>
+        </a>
+    </header>
+
+    <table class="table">
+
+        <h5>Supplier Name : <b><span class="supplier-name"></span></b></h5>
+        <br />
+        <h5>Contact Person : <b><span class="contact-person"></span></b></h5>
+
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Discontinue</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            @*<tr class="baris">
+            <td class="product-name"></td>
+            <td class="description"></td>
+            <td class="price"></td>
+            <td class="stock"></td>
+            <td class="discotinue"></td>
+            </tr>*@
+        </tbody>
+    </table>
+</div>
+
+<script>
+    //var detailModal = document.querySelector(".btn-detail-modal");
+    $(".btn-detail-modal").click(function (event){
+    //detailModal.addEventListener("click", function (event) {
+        event.preventDefault();
+        let urlAction = $(this).attr("href");
+        $.ajax({
+            url: urlAction,
+            success: function (result) {
+                console.log(result);
+                document.querySelector(".supplier-name").textContent = result.supplier.companyName;
+                document.querySelector(".contact-person").textContent = result.supplier.contactPerson;
+
+                for (let item of result.gridProducts) {
+                    var tbody = document.querySelector(".tbody");
+                    var baris = document.createElement("tr");
+                    var tdProductName = document.createElement("td");
+                    var tdDescription = document.createElement("td");
+                    var tdPrice = document.createElement("td");
+                    var tdStock = document.createElement("td");
+                    var tdDiscontinue = document.createElement("td");
+                    tbody.appendChild(baris);
+                    baris.appendChild(tdProductName);
+                    baris.appendChild(tdDescription);
+                    baris.appendChild(tdPrice);
+                    baris.appendChild(tdStock);
+                    baris.appendChild(tdDiscontinue);
+
+                    tdProductName.textContent = item.productName;
+                    tdDescription.textContent = item.description;
+                    tdPrice.textContent = item.price;
+                    tdStock.textContent = item.stock;
+                    tdDiscontinue.textContent = item.discontinue;
+                }
+            },
+            fail: function () { console.log("Fail") },
+            error: function () { console.log("Internal Server Error") }
+        });
+        //$("label, h1, span").css("color", "white");
+        $(".modal-layer").css("display", "flex");
+        $(".detail-dialog").css("display", "block");
+    });
+</script>

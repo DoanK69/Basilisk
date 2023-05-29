@@ -1,0 +1,35 @@
+﻿@using Basilisk.ViewModel.Salesmen
+
+@model DetailSalesmanViewModel
+
+@{
+    ViewData["Title"] = "Detail Salesman";
+}
+
+<h1><center>Detail Sales Regions</center></h1>
+
+<table>
+        <h5>Salesman Name : <b>@Model.GridSales.FirstName</b></h5>
+        <br />
+        <h5>Level : <b>@Model.GridSales.Level</b></h5>
+    <div class="field-row">
+        <h3>@Model.GridSales.EmployeeNumber</h3>
+        <h3>Total @Model.TotalRegion</h3>
+    </div>
+    <thead>
+        <tr>
+            <th>Region City</th>
+            <th>Region Remark</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.GridRegions)
+        {
+            <tr>
+                <td>@item.RegionCity</td>
+                <td>@item.RegionRemark</td>
+
+            </tr>
+        }
+    </tbody>
+</table>

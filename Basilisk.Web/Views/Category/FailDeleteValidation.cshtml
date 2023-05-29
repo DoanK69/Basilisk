@@ -1,0 +1,9 @@
+﻿@model Int32
+@{
+    ViewData["Title"] = "Fail To Delete Category";
+}x
+<h1>Fail To Delete Category</h1>
+<p>There are @Model product(s) found which are categorized as this category.</p>
+<p>You can't delete this category while those product(s) is/are dependent to this category.</p>
+<p>Remove all those products permanently to remove this category permanently.</p>
+<a asp-action="Index">Back to Index</a>

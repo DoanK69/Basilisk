@@ -1,0 +1,126 @@
+﻿<div class="popup-dialog add-dialog">
+    <header>
+        <h1>Add Category</h1>
+        <a href="javascript:;" class="close-button">
+            <i class="fa fa-close"></i>
+        </a>
+    </header>
+    <form method="post" asp-action="AddPopUp">
+        <div class="field-row">
+            <label class="idLabel">Id</label>
+            <input type="text" id="id" placeholder="Id" />
+        </div>
+        <div class="field-row">
+            <label>Name</label>
+            <input type="text" id="categoryName" placeholder="Name" />
+            <span data-for="Name"></span>
+        </div>
+        <div class="field-row">
+            <label>Description</label>
+            <input type="text" id="description" placeholder="Description" />
+            <span data-for="Description"></span>
+        </div>
+        <div class="field-row">
+            <label>Drop Down</label>
+            <select>
+            </select>
+        </div>
+        <div class="field-row">
+            <button class="btn btn-success" type="submit" asp-action="Add">Save</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    $(".btn-add-modal").click(function (event) {
+        event.preventDefault();
+        $(".add-dialog #id").val(0);
+        document.querySelector("#categoryName").value = "";
+        document.querySelector("#description").value = "";
+        //$("#id").hide();
+        //$("label, h1").css("color", "white");
+        //$(".field-row > .idLabel").hide();
+        $(".modal-layer").css("display", "flex");
+        $(".add-dialog").css("display", "block");
+    });
+
+    $(".add-dialog form").submit(function (event) {
+        event.preventDefault();
+        var id = document.querySelector("#id").value;
+        var name = document.querySelector("#categoryName").value;
+        var description = document.querySelector("#description").value;
+
+        let urlAction = "";
+        if (id == 0) {
+            urlAction = "/Category/AddPopUp";
+        }
+        else {
+            urlAction = "/Category/EditPopUp";
+        }
+
+
+
+        let object = {
+            "id": id,
+            "name": name,
+            "description": description
+        }
+
+        //var tokenHelper $('[name="__RequestVerificationToke"]').val();;
+        var token = $('[name="__RequestVerificationToken"]').val();
+
+
+        $.ajax({
+            method: "POST",
+            url: urlAction,
+            data: JSON.stringify(object),
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            headers: {
+                "__RequestVerificationToken": token
+            },
+            success: function (result) {
+                console.log(result);
+                if (result.success == true) {
+                    location.reload();
+                }
+                generateValidationMessage(result.validations);
+            },
+            fail: function () { console.log("Fail") },
+            error: function () { console.log("Internal Server Error") }
+        });
+    });
+
+    $(".btn-update-modal").click(function (event) {
+        event.preventDefault();
+        //$("#id").show();
+        //$(".field-row > .idLabel").show();
+        //$("label, h1").css("color", "white");
+        //$("h1").text("Edit Category");
+        $(".modal-layer").css("display", "flex");
+        $(".add-dialog").css("display", "block");
+
+        let valueUrl = $(this).attr("href");
+        $.ajax({
+            url: valueUrl,
+            success: function (result) {
+                console.log(result);
+                document.querySelector("#id").value = result.id;
+                document.querySelector("#categoryName").value = result.name;
+                document.querySelector("#description").value = result.description;
+            },
+            fail: function () { console.log("Fail") },
+            error: function () { console.log("Internal Server Error") }
+        });
+    });
+
+    function generateValidationMessage(validations) {
+        for (let item of validations) {
+            let propName = item.propertyName;
+            let msg = item.messageError;
+
+            var elementSpanSelector = document.querySelector(`.add-dialog form .field-row [data-for=${propName}]`);
+            elementSpanSelector.textContent = msg;
+        }
+    }
+</script>

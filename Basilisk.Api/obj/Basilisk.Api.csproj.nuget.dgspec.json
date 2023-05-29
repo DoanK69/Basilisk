@@ -1,0 +1,354 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Api\\Basilisk.Api.csproj": {}
+  },
+  "projects": {
+    "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Api\\Basilisk.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Api\\Basilisk.Api.csproj",
+        "projectName": "Basilisk.Api",
+        "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Api\\Basilisk.Api.csproj",
+        "packagesPath": "C:\\Users\\1720\\.nuget\\packages\\",
+        "outputPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\1720\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Provider\\Basilisk.Provider.csproj": {
+                "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Provider\\Basilisk.Provider.csproj"
+              },
+              "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj": {
+                "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj",
+        "projectName": "Basilisk.DataAccess",
+        "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj",
+        "packagesPath": "C:\\Users\\1720\\.nuget\\packages\\",
+        "outputPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\1720\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Provider\\Basilisk.Provider.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Provider\\Basilisk.Provider.csproj",
+        "projectName": "Basilisk.Provider",
+        "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Provider\\Basilisk.Provider.csproj",
+        "packagesPath": "C:\\Users\\1720\\.nuget\\packages\\",
+        "outputPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Provider\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\1720\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj": {
+                "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj"
+              },
+              "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Repository\\Basilisk.Repository.csproj": {
+                "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Repository\\Basilisk.Repository.csproj"
+              },
+              "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj": {
+                "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Repository\\Basilisk.Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Repository\\Basilisk.Repository.csproj",
+        "projectName": "Basilisk.Repository",
+        "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Repository\\Basilisk.Repository.csproj",
+        "packagesPath": "C:\\Users\\1720\\.nuget\\packages\\",
+        "outputPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\1720\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj": {
+                "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj"
+              },
+              "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj": {
+                "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj",
+        "projectName": "Basilisk.ViewModel",
+        "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\Basilisk.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\1720\\.nuget\\packages\\",
+        "outputPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.ViewModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\1720\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj": {
+                "projectPath": "D:\\Framework\\Project\\Basilisk.Web\\Basilisk.DataAccess\\Basilisk.DataAccess.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Mvc.ViewFeatures": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.200\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

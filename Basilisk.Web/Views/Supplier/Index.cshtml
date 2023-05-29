@@ -1,0 +1,85 @@
+﻿@using Basilisk.ViewModel.Supplier;
+@model IndexSupplierViewModel
+@{
+    ViewData["Title"] = "Supplier Index";
+}
+@section modalDialog{
+    <div class="modal-layer">
+        <partial name="_AddModal"></partial>
+        <partial name="_DetailModal"></partial>
+    </div>
+    <script>
+        $(".close-button").click(function (event) {
+            event.preventDefault();
+            $(".modal-layer").removeAttr("style");
+            $(".popup-dialog").removeAttr("style");
+            document.querySelector(".form").reset();
+        });
+    </script>
+}
+<h1>Total data di tabel Supplier  @Model.TotalSupplier</h1>
+
+<table>
+    <form method="get" asp-controller="Supplier" asp-action="Index">
+        <div class="field-row">
+            <div class="search">
+                <label for="searchName">Supplier Search</label>
+                <input id="searchName" type="text" name="searchName" value="@Model.SearchName" />
+                <button type="submit"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+        <div class="field-row">
+            <a class="btn btn-add" asp-action="Add"><i class="fas fa-plus"></i></a>
+            <a class="btn btn-add" id="add-modal" asp-action="AddModal"><i class="fas fa-plus">Add Modal</i></a>
+        </div>
+    </form>
+    <thead>
+        <tr>
+            <th>Action</th>
+            <th>ID</th>
+            <th>Company Name</th>
+            <th>Contact Person</th>
+            <th>Job Title</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Modal Button</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Grid)
+        {
+            <tr>
+                <td>
+                    <a class="btn btn-update" asp-action="Edit" asp-route-page="@Model.CurrentPage" asp-route-id="@item.Id"><i class="fas fa-edit"></i></a>
+                    <a class="btn btn-delete" asp-action="Delete" asp-route-page="@Model.CurrentPage" asp-route-id="@item.Id" onclick="return confirm('Apakah kamu ingin menghapus data ini? : @item.Id');"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-detail" asp-action="Detail" asp-route-id="@item.Id"><i class="fas fa-info"></i></a>
+                </td>
+                <td>@item.Id</td>
+                <td>@item.CompanyName</td>
+                <td>@item.ContactPerson</td>
+                <td>@item.JobTitle</td>
+                <td>@item.Address</td>
+                <td>@item.City</td>
+                <td>@item.Phone</td>
+                <td>@item.Email</td>
+                <td>
+                    <a class="btn btn-detail-modal" asp-action="DetailModal" asp-route-id="@item.Id"><i class="fas fa-info">Detail</i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Total Data : @Model.TotalData</td>
+            <td colspan="9">
+                @for (int i = 1; i <= Model.TotalHalaman; i++)
+                {
+                    <a class="btn btn-add" asp-action="Index" asp-route-page="@i"
+                   asp-route-searchName="@Model.SearchName">@i</a>
+                }
+            </td>
+        </tr>
+    </tfoot>
+</table>

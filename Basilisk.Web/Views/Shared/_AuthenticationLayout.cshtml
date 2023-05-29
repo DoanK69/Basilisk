@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Basilisk.Web</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @*<script defer src="/your_path_to_version_6_files/js/solid.js"></script>
+    <script defer src="/your_path_to_version_6_files/js/brands.js"></script>
+
+    <!-- update the core fontawesome.js file -->
+    <script defer src="/your_path_to_version_6_files/js/fontawesome.js"></script>*@
+    @*<link rel="stylesheet" href="~/css/font-awesome.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/font-awesome.min.css" asp-append-version="true" />*@
+    <link rel="stylesheet" href="~/css/normalize.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/styleFolder.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Basilisk.Web.styles.css" asp-append-version="true" />
+</head>
+<body class="authentication-body">
+    <div class="authentication-wrapper">
+        <header class="company-log">
+            <h1 style="text-align:center">
+                Login
+            </h1>
+        </header>
+        <main style="display:flex; justify-content:center;">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+</body>
+</html>
+

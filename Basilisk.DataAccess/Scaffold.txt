@@ -1,0 +1,6 @@
+﻿Scaffold-DbContext "Server=LAPTOP-S07FEJQ8;Database=BasiliskTF;Trusted_Connection=True; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+Scaffold-DbContext "Server=LAPTOP-7T3FATO9;Database=BasiliskTF; user=sa; password=indocyber;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+//untuk update
+Scaffold-DbContext "Server=LAPTOP-7T3FATO9;Database=Atlas;Trusted_Connection=True; TrustServerCertificate=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Force
+
